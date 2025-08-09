@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9: Interpretando os Dados (Matemática)</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 9: Interpretando os Dados (Matemática)</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Descrição de um gráfico de pizza sobre as fontes de energia de um país:
+                O gráfico mostra que a matriz energética é composta por: 40% Hidrelétrica, 30% Termelétrica, 20% Eólica e 10% Solar. O texto informa que a produção total de energia do país é de 500.000 megawatts (MW).
+            </div>
+            <p class="statement">Com base nos dados, a quantidade de energia produzida pela fonte Eólica é de:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">20 MW.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">20.000 MW.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">50.000 MW.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">100.000 MW.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">200.000 MW.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A fonte eólica corresponde a 20% da produção total. O cálculo é 20% de 500.000, ou seja, (20/100) * 500.000 = 0,2 * 500.000 = 100.000 MW.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                Texto explicando um cálculo:
+                "A densidade demográfica é calculada dividindo-se o número total de habitantes pela área do território. Uma cidade com 2.000.000 de habitantes e uma área de 500 km² tem uma densidade de 4.000 hab/km²."
+            </div>
+            <p class="statement">Usando a mesma lógica, qual é a densidade demográfica de um município com 150.000 habitantes e uma área de 1.000 km²?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">15 hab/km².</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">150 hab/km².</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">1.500 hab/km².</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">15.000 hab/km².</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">6,6 hab/km².</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A prova ensina o conceito e pede sua aplicação. O cálculo é: 150.000 habitantes / 1.000 km² = 150 hab/km².</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Tabela de desempenho de um vendedor por trimestre:
+                <br>| Trimestre | Vendas (em R$) |
+                <br>|---|---|
+                <br>| 1º | 15.000 |
+                <br>| 2º | 25.000 |
+                <br>| 3º | 20.000 |
+                <br>| 4º | 40.000 |
+            </div>
+            <p class="statement">A média de vendas por trimestre desse vendedor foi de:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">R$ 20.000.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">R$ 25.000.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">R$ 28.500.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">R$ 40.000.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">R$ 100.000.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A questão pede a organização e aplicação de um conceito básico. Primeiro, soma-se o total de vendas: 15.000 + 25.000 + 20.000 + 40.000 = 100.000. Depois, divide-se pelo número de trimestres (4). 100.000 / 4 = 25.000.</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                Texto sobre astronomia:
+                "A luz viaja a aproximadamente 300.000 km/s. Em notação científica, esse valor é escrito como 3 x 10⁵ km/s. A distância da Terra à Lua é de cerca de 384.000 km."
+            </div>
+            <p class="statement">Utilizando a lógica da notação científica apresentada no texto, como a distância da Terra à Lua seria representada?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">3,84 x 10³ km.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">3,84 x 10⁴ km.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">3,84 x 10⁵ km.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">38,4 x 10⁴ km.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">384 x 10³ km.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Para escrever 384.000 em notação científica, a vírgula deve "andar" 5 casas para a esquerda para que o número fique entre 1 e 10 (3,84). O número de casas andadas (5) vira o expoente da base 10.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                Descrição de um gráfico de barras sobre as preferências de lazer de um grupo de 200 pessoas:
+                O gráfico mostra:<br>
+                Cinema: 80 pessoas<br>
+                Esportes: 50 pessoas<br>
+                Leitura: 40 pessoas<br>
+                Outros: 30 pessoas
+            </div>
+            <p class="statement">Qual a porcentagem de pessoas que preferem "Cinema"?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">20%</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">30%</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">40%</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">50%</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">80%</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A questão testa a tradução de dados de um gráfico para porcentagem. O cálculo é (número de pessoas que preferem cinema / número total de pessoas) * 100. Ou seja, (80 / 200) * 100 = 0,4 * 100 = 40%.</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                Receita de um suco para 2 pessoas:<br>
+                4 laranjas<br>
+                2 limões<br>
+                500 ml de água
+            </div>
+            <p class="statement">Para fazer uma quantidade desse mesmo suco que sirva exatamente 5 pessoas, a quantidade de laranjas e de água necessárias serão, respectivamente:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">8 laranjas e 1000 ml de água.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">9 laranjas e 1150 ml de água.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">10 laranjas e 1250 ml de água.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">12 laranjas e 1500 ml de água.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">20 laranjas e 2500 ml de água.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A questão exige um raciocínio de proporcionalidade. A receita original é para 2 pessoas. Para 1 pessoa, seria metade: 2 laranjas, 1 limão e 250 ml de água. Para 5 pessoas, multiplica-se a receita de 1 pessoa por 5: (2*5) laranjas e (250*5) ml de água, resultando em 10 laranjas e 1250 ml.</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                Informação sobre um desconto em uma loja:
+                "Toda a loja com 30% de desconto! Um casaco que custava R$ 200,00 sairá por R$ 140,00, pois o desconto é de R$ 60,00 (30% de 200)."
+            </div>
+            <p class="statement">Seguindo a mesma lógica, qual será o preço final de uma calça que originalmente custava R$ 150,00?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">R$ 45,00</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">R$ 100,00</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">R$ 105,00</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">R$ 110,00</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">R$ 120,00</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto ensina a calcular o desconto e o preço final. Primeiro, calcula-se o desconto: 30% de 150 = (30/100) * 150 = 45. Depois, subtrai-se o desconto do preço original: 150 - 45 = 105.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                Tabela de câmbio em uma casa de turismo:
+                <br>| Moeda | Valor de Compra (R$) |
+                <br>|---|---|
+                <br>| Dólar (US$) | 5,20 |
+                <br>| Euro (€) | 5,60 |
+                <br>| Libra (£) | 6,50 |
+            </div>
+            <p class="statement">Um turista quer trocar R$ 1.120,00 por Euros. Quantos Euros (€) ele receberá?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">€ 150</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">€ 200</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">€ 215</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">€ 250</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">€ 560</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A questão pede a interpretação da tabela e a aplicação de uma operação simples. O valor de compra do Euro é R$ 5,60. Para saber quantos Euros correspondem a R$ 1.120,00, divide-se o valor em Reais pelo valor do Euro: 1120 / 5,60 = 200.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                "Uma impressora imprime 15 páginas por minuto. Ela precisa imprimir um trabalho de 450 páginas."
+            </div>
+            <p class="statement">Quantos minutos a impressora levará para concluir o trabalho?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">15 minutos.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">20 minutos.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">30 minutos.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">45 minutos.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">60 minutos.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>É um problema de raciocínio lógico simples. Se a impressora imprime 15 páginas a cada minuto, para saber o tempo total, divide-se o número de páginas pelo ritmo da impressora: 450 / 15 = 30 minutos.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                Um mapa com escala gráfica:
+                O mapa de um parque mostra uma escala onde um segmento de 1 cm no mapa corresponde a 200 metros na realidade.
+            </div>
+            <p class="statement">No mapa, a distância em linha reta entre o portão de entrada e o lago é de 4,5 cm. Qual é a distância real entre esses dois pontos?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">450 metros.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">600 metros.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q1c" value="C"><label for="q1c">800 metros.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q1d" value="D"><label for="q1d">900 metros.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q1e" value="E"><label for="q1e">1000 metros.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A questão testa a aplicação de uma escala. Se 1 cm equivale a 200 m, então 4,5 cm equivalem a 4,5 * 200 = 900 metros.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

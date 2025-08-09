@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: Decifrando os Gêneros Textuais</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 1: Decifrando os Gêneros Textuais</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Um post em uma rede social de uma marca de produtos de limpeza:
+                "Sua casa merece brilhar! ✨ Cansado da sujeira que não sai? Experimente nosso novo Limpador Max Power! Fórmula revolucionária que elimina 99% das bactérias. Garanta já o seu e transforme seu lar. Link na bio!"
+            </div>
+            <p class="statement">A principal finalidade deste texto é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">Informar o leitor sobre os componentes químicos de um produto.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">Narrar uma história sobre a limpeza de uma casa.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">Convencer o público a adquirir um produto específico.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">Criticar os hábitos de limpeza da população.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">Emocionar o leitor com uma mensagem sobre a importância do lar.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto utiliza verbos no imperativo ("Experimente", "Garanta"), adjetivos positivos ("revolucionária") e um apelo direto ao consumidor, características típicas do gênero publicitário, cujo objetivo é a persuasão para a compra.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                Título de uma reportagem em um portal de notícias:
+                "Asteroide de aproximadamente 50 metros passará próximo à Terra na próxima quinta-feira, afirmam cientistas da NASA. Risco de colisão é descartado."
+            </div>
+            <p class="statement">Pelas características apresentadas, como o foco em um fato real e a busca pela objetividade, o texto pertence ao gênero:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">Poema, pois usa uma linguagem criativa para descrever o universo.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">Texto publicitário, pois visa vender equipamentos de observação.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">Notícia, pois sua missão é informar sobre um acontecimento relevante.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">Cartum, pois critica a forma como a ciência é divulgada.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">Infográfico, pois apresenta dados visuais sobre o asteroide.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto tem como única missão informar o leitor sobre um fato real de maneira objetiva, sem expressar opinião, o que é a principal característica do gênero notícia.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Descrição de um cartum:
+                Um paciente está deitado no divã de um psicólogo. O psicólogo, em sua cadeira, olha para o próprio celular e diz: "Entendo... E como você se sente sobre ser ignorado?". O paciente olha para ele com uma expressão de desespero.
+            </div>
+            <p class="statement">A principal "missão" comunicativa deste cartum é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">Fazer uma propaganda de serviços de psicologia.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">Expressar os sentimentos do autor sobre a tecnologia.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">Informar sobre os novos métodos de terapia.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">Narrar a história de um tratamento psicológico bem-sucedido.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">Criticar, por meio do humor e da ironia, o impacto da tecnologia nas relações humanas.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'E')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O cartum utiliza a ironia (o psicólogo comete o mesmo erro que o paciente descreve) para fazer uma crítica a uma situação do cotidiano, neste caso, como a distração com celulares afeta até mesmo as interações profissionais.</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                Versos de um texto:
+                "Na tela fria, um sol artificial,<br>
+                dedos que dançam, um mundo virtual.<br>
+                A voz que me chama não tem corpo, nem calor,<br>
+                é apenas um eco, um vago tremor."
+            </div>
+            <p class="statement">A estrutura em versos e o uso de uma linguagem subjetiva para expressar sentimentos sobre a vida moderna são características do gênero:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">Notícia.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">Poema.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">Texto publicitário.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">Manual de instruções.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">Relatório científico.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto está organizado em versos, utiliza uma linguagem conotativa ("sol artificial") e expressa a visão de mundo e os sentimentos de um "eu lírico", cumprindo a missão de emocionar e provocar reflexão, típica do poema.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                Descrição de um cartaz de campanha de trânsito:
+                A imagem mostra um celular que se transforma em uma grade de prisão, com uma pessoa presa dentro dele. O texto diz: "Ao volante, a sua atenção não pode estar em outro lugar. Desligue antes de dirigir."
+            </div>
+            <p class="statement">Este cartaz, ao combinar imagem de impacto e texto direto, tem como objetivo principal:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">Vender um novo modelo de celular mais seguro.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">Instruir como configurar o celular para o modo "não perturbe".</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">Conscientizar o público sobre os perigos do uso do celular no trânsito.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">Informar sobre as novas leis de trânsito.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">Criticar a dependência que as pessoas têm da tecnologia.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A finalidade do texto é persuadir o público a adotar um comportamento seguro (não usar o celular ao dirigir) por meio da conscientização sobre um tema de relevância social (segurança no trânsito), o que define um cartaz de campanha.</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                Descrição de um infográfico com o título "Ciclo do Plástico no Oceano":
+                O infográfico mostra o desenho de uma cidade, um rio e o mar. Setas indicam o caminho: uma garrafa plástica é jogada na rua, levada pela chuva para o rio, que deságua no mar. No oceano, o sol e as ondas quebram a garrafa em microplásticos, que são ingeridos por peixes. Uma última seta mostra um peixe sendo pescado para consumo humano.
+            </div>
+            <p class="statement">A função deste infográfico é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">Emocionar o leitor com a beleza da vida marinha.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">Explicar um processo complexo de forma visual e sequencial.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">Convencer o leitor a comprar peixes de criadouros.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">Criticar a falta de saneamento básico nas cidades.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">Narrar a aventura de uma garrafa plástica.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O infográfico mistura textos curtos e imagens para explicar um processo complexo (o ciclo do plástico e suas consequências) de maneira rápida e fácil de entender, sendo esta a sua missão principal.</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                "Compre o novo FoneBlaster X! Com ele, o mundo lá fora desaparece. Cancele o barulho, cancele as preocupações. Viva no seu próprio universo sonoro."
+            </div>
+            <p class="statement">Analisando os recursos característicos do gênero, o uso dos verbos no imperativo ("Compre", "Cancele", "Viva") tem a função de:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Informar as especificações técnicas do produto.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Dar uma ordem direta e autoritária ao leitor.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Convidar e persuadir o consumidor a realizar uma ação.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Expressar um desejo do autor do texto.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Deixar o texto mais poético e subjetivo.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>No gênero publicitário, os verbos no modo imperativo são um "truque" para convencer o leitor, criando um convite ou uma sugestão persuasiva para que ele adquira o produto ou a ideia.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                Trecho de um manual de instruções de um drone:
+                "1. Antes de decolar, certifique-se de que a bateria esteja totalmente carregada. 2. Pressione o botão 'ON' por três segundos até o LED frontal piscar. 3. Para calibrar o giroscópio, posicione o drone em uma superfície plana."
+            </div>
+            <p class="statement">Pela linguagem direta, objetiva e sequencial, a finalidade predominante deste texto é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">Persuadir o leitor sobre a qualidade do drone.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">Narrar a história da criação do aparelho.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">Criticar a complexidade dos eletrônicos modernos.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">Instruir o usuário sobre como operar um equipamento.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">Descrever as partes que compõem o aparelho.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto apresenta uma sequência de passos claros e objetivos com o único propósito de guiar as ações do leitor para que ele execute uma tarefa (operar o drone), caracterizando o gênero manual de instruções.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                Diálogo em uma tirinha:
+                Quadro 1: Um personagem diz ao outro: "O segredo da felicidade é não se preocupar com a opinião dos outros."<br>
+                Quadro 2: O segundo personagem responde: "Uau, profundo! O que os outros vão pensar quando eu contar que aprendi isso com você?"<br>
+                Quadro 3: O primeiro personagem fica pensativo e preocupado.
+            </div>
+            <p class="statement">Analisando a estrutura da tirinha, o humor é construído a partir da:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">Informação objetiva sobre o segredo da felicidade.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">Utilização de uma linguagem extremamente formal e complexa.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">Quebra de expectativa gerada pela contradição entre a fala e a reação do primeiro personagem.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">Expressão facial de felicidade do segundo personagem.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">Descrição detalhada do cenário onde ocorre o diálogo.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O humor da tirinha nasce da ironia. O primeiro personagem, que prega o desapego à opinião alheia, imediatamente se preocupa com ela ao ser questionado, criando uma quebra de expectativa e uma crítica sutil ao comportamento humano.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                Trecho de um artigo de opinião em um jornal:
+                "É inaceitável que, em pleno século XXI, ainda tenhamos que discutir a importância da vacinação. A ciência já provou sua eficácia, e cabe ao Estado garantir o acesso e combater a desinformação que, infelizmente, ganha força nas redes sociais."
+            </div>
+            <p class="statement">Diferentemente de uma notícia, este texto se caracteriza por:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">Ser totalmente imparcial e não apresentar nenhum ponto de vista.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">Usar uma linguagem poética para falar sobre saúde.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">Apresentar explicitamente a opinião e o ponto de vista do autor sobre um tema.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">Ter como único objetivo instruir as pessoas sobre como se vacinar.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">Utilizar o humor para criticar as políticas de saúde.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto usa expressões como "é inaceitável" e "infelizmente", que marcam claramente um posicionamento e a opinião do autor, diferenciando-o de uma notícia, que busca a objetividade para relatar um fato.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6: O Posicionamento Estratégico - Pronomes e Advérbios</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 6: O Posicionamento Estratégico - Pronomes e Advérbios</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Diálogo em uma tirinha:<br>
+                Personagem 1: "Você viu meu livro por aí?"<br>
+                Personagem 2: "Não vi ele em lugar nenhum."
+            </div>
+            <p class="statement">A resposta do Personagem 2, embora comum na linguagem falada, apresenta um desvio da norma-padrão quanto à colocação pronominal. A forma que segue a regra culta seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">"Não o vi em lugar nenhum."</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">"Não vi-o em lugar nenhum."</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">"Ele não foi visto por mim."</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">"Não lhe vi em lugar nenhum."</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">"Vi não ele em lugar nenhum."</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A palavra "não" é um fator de atração que exige a próclise, ou seja, o pronome deve vir antes do verbo. Além disso, o pronome oblíquo correspondente a "meu livro" (objeto direto) é "o", e não "ele".</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                Pergunta em um formulário de viagem:<br>
+                "_________ você pretende ir nas suas próximas férias?"
+            </div>
+            <p class="statement">Considerando a regência do verbo "ir", que indica movimento e destino, a lacuna deve ser preenchida corretamente por:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">Onde.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">Aonde.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">Em onde.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">De onde.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">Para onde.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo "ir" indica movimento e exige a preposição "a" (ir a algum lugar). Portanto, deve-se usar "aonde" (a + onde) para perguntar sobre o destino.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Início de uma carta formal:<br>
+                "Informamos que a reunião foi cancelada. Entregue-lhes este comunicado, por favor."
+            </div>
+            <p class="statement">A colocação do pronome "lhes" após o verbo ("entregue-lhes") é um caso de ênclise. Essa posição é justificada porque:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">A palavra "comunicado" atrai o pronome.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">Não se deve iniciar orações com pronomes oblíquos átonos.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">O verbo "entregar" está no futuro.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">Trata-se de uma frase negativa.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">O pronome "lhes" sempre exige ênclise.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A ênclise (pronome depois do verbo) é obrigatória quando o verbo inicia a oração, pois a norma-padrão não permite o início de frases com pronomes como "me", "te", "se", "lhe", etc.</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                "Aqui se constroem sonhos."
+            </div>
+            <p class="statement">Na frase, a posição do pronome "se" antes do verbo ("se constroem") é um caso de próclise. O fator que justifica essa colocação é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">A presença de uma palavra negativa.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">O fato de o verbo estar no presente.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">A presença de um advérbio ("Aqui") no início da frase.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">A presença de um sujeito no plural ("sonhos").</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">A ausência de vírgula após o advérbio.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Advérbios (como "aqui", "sempre", "talvez") são palavras atrativas que "puxam" o pronome oblíquo para antes do verbo, causando a próclise.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                "Gostaria de saber ________ fica a biblioteca mais próxima."
+            </div>
+            <p class="statement">Para preencher corretamente a lacuna, deve-se usar:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">Aonde, pois "saber" indica movimento.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">Onde, pois o verbo "ficar" indica um lugar fixo.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">Em onde, para dar ênfase ao local.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">Daonde, pois se pergunta a origem da biblioteca.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">Qual, para perguntar a identidade da biblioteca.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo que rege o advérbio é "ficar" (a biblioteca fica em algum lugar). Como "ficar" indica permanência e localização fixa, sem ideia de movimento/destino, o correto é usar "onde".</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                "Se me contarem a verdade, talvez eu mude de ideia."
+            </div>
+            <p class="statement">Substituindo "a verdade" pelo pronome correspondente, a forma que mantém a correção gramatical, segundo a norma-padrão, é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">Se contarem-a para mim...</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">Se me contarem-na...</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">Se a me contarem...</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">Se ma contarem...</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">Se me a contarem...</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Ao juntar os pronomes "me" (a mim, objeto indireto) e "a" (a verdade, objeto direto), eles se contraem na forma "ma". Como a conjunção "Se" atrai os pronomes, a forma correta é a próclise "Se ma contarem".</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                Reescrita de uma frase:<br>
+                Frase original: "Eu farei o trabalho amanhã."<br>
+                Substituindo "o trabalho" pelo pronome "o", a forma mais adequada segundo a norma culta formal (que evita a próclise com o futuro do presente) seria:
+            </div>
+            <p class="statement">A forma mais adequada segundo a norma culta formal seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Eu o farei amanhã.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Farei-o amanhã.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Fá-lo-ei amanhã.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Eu farei-o amanhã.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Eu farei-lhe amanhã.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Com verbos no futuro do presente (farei) ou futuro do pretérito (faria), a norma culta preconiza o uso da mesóclise: o pronome é inserido no meio do verbo. O verbo "fazer" perde o "ze" e o pronome "o" se transforma em "lo" após o "r" infinitivo.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                "Em se tratando de honestidade, ele é um exemplo."
+            </div>
+            <p class="statement">A colocação pronominal (próclise) na expressão "Em se tratando" é justificada pela presença de:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">Verbo no gerúndio ("tratando").</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">Preposição + verbo no gerúndio.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">Sujeito oculto.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">Uma palavra negativa implícita.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">Um advérbio de modo.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A estrutura "em + verbo no gerúndio" é um caso específico que exige a próclise, ou seja, o pronome deve obrigatoriamente vir antes do verbo.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                Diálogo:<br>
+                — Para qual cidade você vai se mudar?<br>
+                — Ainda não sei a cidade _______ vou morar.
+            </div>
+            <p class="statement">A lacuna da segunda frase deve ser preenchida com:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">aonde.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">na qual.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">onde.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">que.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">de que.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo "morar" indica permanência (morar em um lugar). O advérbio "onde" é usado para lugares fixos. Embora "em que" também fosse possível, "onde" é a alternativa correta e mais comum nesse contexto. "Aonde" estaria incorreto, pois não há ideia de destino/movimento.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                "Os alunos que dedicaram-se aos estudos foram aprovados."
+            </div>
+            <p class="statement">Na frase, há um desvio quanto à colocação pronominal. A forma correta, segundo a norma-padrão, seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">Os alunos que se dedicaram...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">Os alunos, que dedicaram-se...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">Os alunos dedicaram-se...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">Os alunos que se dedicaram-se...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">A frase já está correta.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O pronome relativo "que" é uma palavra atrativa que exige a próclise. Portanto, o pronome "se" deve ser posicionado antes do verbo "dedicaram".</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3: O Poder da Imagem</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 3: O Poder da Imagem</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Descrição de um infográfico:
+                Um texto jornalístico discute a crescente crise hídrica em uma metrópole. Ao lado do texto, há um gráfico de barras que mostra o nível dos reservatórios de água da cidade nos últimos cinco anos, com cada barra sucessivamente menor que a anterior.
+            </div>
+            <p class="statement">Neste caso, a função principal do gráfico de barras (linguagem não verbal) em relação ao texto (linguagem verbal) é de:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">Contradição, pois o gráfico mostra que o nível da água está subindo.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">Confirmação, pois os dados visuais comprovam a tendência de queda mencionada no texto.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">Complemento, pois o gráfico introduz o tema do desmatamento, não citado no texto.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">Crítica, pois o gráfico ironiza a forma como a prefeitura mede os níveis.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">Decoração, pois o gráfico não possui nenhuma informação relevante.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O gráfico serve para confirmar e dar credibilidade à informação apresentada no texto. A queda visual das barras comprova a afirmação de que a crise hídrica está se agravando, estabelecendo uma relação de confirmação.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                Descrição de uma fotografia em uma reportagem sobre refugiados:
+                A reportagem fala sobre as dificuldades da travessia de refugiados pelo mar. A foto de página inteira que acompanha o texto mostra o rosto de uma criança pequena, com os olhos assustados e o rosto sujo, olhando diretamente para a câmera dentro de um bote superlotado.
+            </div>
+            <p class="statement">A fotografia, como linguagem não verbal, acrescenta ao texto uma dimensão:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">Analítica, detalhando as estatísticas da imigração.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">Didática, ensinando como navegar em um bote.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">Humorística, tornando o tema mais leve e acessível.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">Emocional, gerando empatia e reforçando o drama humano da situação.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">Otimista, mostrando que a criança chegará ao seu destino em segurança.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A foto não apenas ilustra, mas complementa o texto ao adicionar uma forte carga emocional. O olhar da criança gera empatia no leitor e humaniza a estatística, reforçando o impacto dramático do problema.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Descrição de um cartum sem falas:
+                Quadro 1: Um homem planta uma árvore.<br>
+                Quadro 2: O homem rega a árvore e ela cresce forte e frondosa.<br>
+                Quadro 3: O mesmo homem, agora mais velho, aparece cortando a árvore com uma serra elétrica para construir uma casa maior.
+            </div>
+            <p class="statement">A mensagem principal da tirinha, construída inteiramente por linguagem não verbal, é uma crítica sobre:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">A lentidão do crescimento das árvores.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">A ineficácia dos métodos de jardinagem.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">A contradição humana, que destrói a natureza que um dia cuidou para satisfazer suas necessidades.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">A falta de ferramentas adequadas para o corte de árvores.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">O processo de envelhecimento natural do ser humano.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A interpretação depende 100% da leitura das imagens. A sequência de ações do personagem cria uma narrativa visual que critica a ironia e a contradição do comportamento humano em relação ao meio ambiente.</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                Trecho de um texto sobre alimentação saudável acompanhado de um gráfico de pizza:
+                O texto argumenta: "Uma dieta balanceada é essencial e deve incluir todos os grupos alimentares". O gráfico de pizza ao lado, intitulado "Prato Ideal", mostra as seguintes proporções: 50% de vegetais, 25% de carboidratos e 25% de proteínas.
+            </div>
+            <p class="statement">Qual é a relação entre a imagem (gráfico de pizza) e a afirmação do texto?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">O gráfico contradiz o texto, sugerindo uma dieta baseada apenas em vegetais.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">O gráfico exemplifica visualmente o conceito de "dieta balanceada" apresentado no texto.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">O gráfico complementa o texto com informações sobre os malefícios das proteínas.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">O gráfico ironiza o texto, mostrando que é impossível ter uma dieta ideal.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">O gráfico e o texto não possuem nenhuma relação direta.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto apresenta uma ideia geral ("dieta balanceada"), e o gráfico a exemplifica de forma concreta e visual, mostrando as proporções ideais. A imagem torna a informação mais clara e fácil de assimilar, cumprindo uma função de exemplificação e confirmação.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                Descrição de uma charge política:
+                Um político está em um palanque discursando: "Prometo combater a corrupção e acabar com os privilégios!". Na imagem, porém, seus bolsos estão repletos de dinheiro, e seus sapatos são feitos de ouro.
+            </div>
+            <p class="statement">Na charge, a ironia é construída pela relação de contradição entre:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">A linguagem verbal (o discurso do político) e a linguagem não verbal (sua aparência).</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">O tamanho do palanque e o tamanho do político.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">As palavras "corrupção" and "privilégios".</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">A expressão facial do político e a do público.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">O texto escrito e o título da charge.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A crítica da charge surge do conflito direto entre o que o político diz (linguagem verbal) e o que a imagem mostra (linguagem não verbal). A imagem contradiz e desmente o discurso, criando a ironia.</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                Trecho de uma reportagem com uma tabela:
+                O texto afirma: "O desemprego entre os jovens de 18 a 24 anos atingiu níveis preocupantes no último trimestre." A tabela que acompanha o texto mostra a taxa de desemprego por faixa etária:
+                <br>
+                Faixa Etária | Taxa de Desemprego<br>
+                --- | ---<br>
+                18-24 anos | 25%<br>
+                25-39 anos | 12%<br>
+                40-59 anos | 7%
+            </div>
+            <p class="statement">A função da tabela nesta reportagem é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">Distrair o leitor com informações irrelevantes.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">Apresentar dados numéricos que comprovam a afirmação feita no texto.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">Sugerir que a situação do desemprego irá melhorar no futuro.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">Criticar a metodologia usada para calcular o desemprego.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">Mostrar que o desemprego afeta todas as faixas etárias da mesma forma.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A tabela organiza e apresenta os dados de forma clara, permitindo a comparação entre as faixas etárias. Ela serve para comprovar objetivamente a preocupação levantada no texto, confirmando que a taxa entre os jovens é significativamente maior.</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                Ícone universalmente conhecido:
+                Um círculo vermelho com uma barra diagonal sobre o desenho de um cigarro aceso.
+            </div>
+            <p class="statement">Este ícone, um exemplo de linguagem não verbal, transmite a mensagem "Proibido Fumar" de forma rápida e universal. Sua principal missão é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Artística, pois busca a beleza estética.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Narrativa, pois conta a história do tabagismo.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Informativa/Regulatória, pois comunica uma regra ou proibição.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Emotiva, pois expressa o sentimento do autor sobre o fumo.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Publicitária, pois promove um produto alternativo ao cigarro.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Ícones e símbolos são criados para transmitir uma ideia ou função de forma rápida. Neste caso, a missão é comunicar uma regra de proibição de maneira instantânea, superando barreiras linguísticas.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                Descrição de uma cena em uma história em quadrinhos:
+                Um super-herói voa em alta velocidade. Atrás dele, há várias linhas retas e finas que se estendem pela largura do quadro, e a onomatopeia "VUUUUSHHH!" está escrita em letras grandes e dinâmicas.
+            </div>
+            <p class="statement">Nesta cena, as linhas de movimento e a onomatopeia são elementos da linguagem não verbal e verbal que, combinados, servem para:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">Indicar o local onde a cena acontece.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">Expressar os pensamentos do personagem.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">Sugerir a ideia de alta velocidade e o som do deslocamento.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">Mostrar que o personagem está cansado.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">Criar um clima de mistério e suspense.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Em quadrinhos, as linhas de movimento são uma convenção visual para representar velocidade. A onomatopeia representa o som. Juntas, essas linguagens se complementam para criar uma experiência sensorial completa no leitor, indicando movimento rápido e o som correspondente.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                Um gráfico de linhas intitulado "Evolução do Acesso à Internet no Brasil (2010-2025)":
+                O gráfico mostra uma linha que sobe de forma constante e acentuada ao longo dos anos.
+            </div>
+            <p class="statement">A principal informação que se pode extrair da leitura deste gráfico de linhas é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">A proporção de usuários por região do país.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">A quantidade exata de usuários em 2015.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">Uma comparação entre o acesso à internet e o acesso à TV.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">A tendência de crescimento contínuo do acesso à internet ao longo do tempo.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">As causas para o aumento do acesso à internet.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A função primordial de um gráfico de linhas é mostrar a evolução de uma variável ao longo do tempo. A trajetória ascendente da linha indica claramente uma tendência de aumento contínuo.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                Um anúncio de um aplicativo de meditação:
+                O texto diz: "Encontre sua paz interior." A imagem mostra uma pessoa sentada em posição de lótus, com uma expressão serena, em um escritório caótico e barulhento. Ao redor da pessoa, há uma "bolha" de tranquilidade que a isola do caos.
+            </div>
+            <p class="statement">Na peça publicitária, a imagem (linguagem não verbal) funciona como uma metáfora visual que:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">Confirma que a meditação só funciona em ambientes caóticos.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">Contradiz a ideia de paz interior, mostrando o estresse do escritório.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">Reforça o benefício do produto, mostrando que ele cria um refúgio de calma em meio ao estresse.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">Instrui o usuário sobre como arrumar seu escritório.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">Critica as longas jornadas de trabalho nos dias de hoje.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A imagem complementa e reforça a promessa do texto. A "bolha de tranquilidade" é uma metáfora visual poderosa para o efeito do aplicativo: criar um estado de paz e isolamento mental, não importando o ambiente externo.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

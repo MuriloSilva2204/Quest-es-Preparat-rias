@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5: As Regras do Jogo - Concordância e Regência</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 5: As Regras do Jogo - Concordância e Regência</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Frase em um relatório de pesquisa:
+                "A maioria dos entrevistados, mesmo após informados dos riscos, responderam que não pretendem mudar seus hábitos."
+            </div>
+            <p class="statement">Considerando a norma-padrão, a concordância verbal na frase poderia ser corrigida, pois com a expressão "A maioria de", o verbo também poderia concordar com o núcleo do sujeito. A forma correta, nesse caso, seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">responderão.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">respondia.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">respondeu.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">respondem.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">haviam respondido.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Com expressões partitivas como "a maioria de" seguidas de um substantivo no plural, o verbo pode concordar tanto com o especificador ("entrevistados" -> responderam) quanto com o núcleo do coletivo ("maioria" -> respondeu). Ambas as formas são corretas.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                Anúncio em uma loja:
+                "Promoção! Na compra de qualquer produto, leve duzentos gramas de café especial."
+            </div>
+            <p class="statement">A concordância nominal no anúncio está:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">Incorreta, pois deveria ser "duzentas gramas", já que "grama" (unidade de peso) é uma palavra feminina.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">Incorreta, pois deveria ser "duzentos grama", com o numeral no plural e o substantivo no singular.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">Correta, pois "grama" como unidade de peso é uma palavra masculina, concordando com "duzentos".</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">Correta, mas seria melhor usar "duzentos e cinquenta gramas" para ser mais preciso.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">Incorreta, pois a palavra "café" é masculina, exigindo "duzento".</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A palavra "grama", quando se refere à unidade de medida de massa, é um substantivo masculino. Portanto, a concordância com o numeral "duzentos" está de acordo com a norma-padrão.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Frase de um estudante:
+                "Eu prefiro muito mais assistir séries do que sair aos fins de semana."
+            </div>
+            <p class="statement">De acordo com a regência verbal padrão, o verbo "preferir" é transitivo direto e indireto. A construção que segue a norma-padrão seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">Eu prefiro assistir séries do que sair.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">Eu prefiro mais assistir séries a sair.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">Eu prefiro assistir séries a sair.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">Eu prefiro assistir séries que sair.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">Eu prefiro assistir séries em vez de sair.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A regência padrão do verbo "preferir" estabelece a comparação com a preposição "a" e não com "do que" ou "que". Além disso, ele já contém a ideia de "mais", tornando redundante o uso de "mais" ou "muito mais". A forma correta é "preferir uma coisa a outra".</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                "O candidato se referiu a todas as propostas da oposição durante o debate."
+            </div>
+            <p class="statement">Se substituirmos "a todas as propostas" por "àquelas propostas", a frase, para se manter correta quanto ao uso da crase, deveria ser escrita como:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">se referiu àquelas propostas.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">se referiu a aquelas propostas.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">se referiu aquelas propostas.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">se referiu as aquelas propostas.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">se referiu àquelas propostas, sem alteração.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo "referir-se" exige a preposição "a". O pronome demonstrativo "àquelas" começa com a vogal "a". A crase ocorre na fusão da preposição "a" exigida pelo verbo com o "a" inicial do pronome "aquelas", tornando o uso do acento grave obrigatório.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                Frase de um livro de receitas:
+                "Esta torta, eu dedico à minha avó."
+            </div>
+            <p class="statement">O uso da crase em "à minha avó" é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">Obrigatório, pois o verbo "dedicar" exige a preposição "a" e "avó" é uma palavra feminina.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">Facultativo, pois antes de pronomes possessivos femininos (como "minha"), o uso do artigo "a" é opcional.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">Incorreto, pois não se usa crase antes de pronomes de tratamento.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">Incorreto, pois o verbo "dedicar" não exige preposição.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">Obrigatório, pois "minha avó" é uma expressão que indica lugar.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo "dedicar" (dedicar algo "a" alguém) exige a preposição "a". No entanto, antes de pronomes possessivos femininos no singular (minha, tua, sua), o uso do artigo "a" é facultativo. Logo, a crase (junção da preposição + artigo) também se torna facultativa. "Dedico a minha avó" também estaria correto.</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                "A população assistiu, impaciente, as manobras políticas dos governantes."
+            </div>
+            <p class="statement">Considerando a norma-padrão e a regência do verbo "assistir" no sentido de "ver" ou "presenciar", a frase apresenta um desvio, pois o correto seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">assistiu, impaciente, das manobras.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">assistiu, impaciente, com as manobras.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">assistiu, impaciente, em as manobras.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">assistiu, impaciente, às manobras.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">A frase está correta e não precisa de ajustes.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo "assistir", no sentido de ver/presenciar, é transitivo indireto e exige a preposição "a". Como "manobras" é uma palavra feminina que aceita o artigo "as", ocorre a crase. O correto é "assistir às manobras".</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                "Faziam dois anos que a equipe não vencia um campeonato."
+            </div>
+            <p class="statement">A concordância do verbo "fazer" na frase está em desacordo com a norma-padrão. A forma correta seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Fazia dois anos...</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Fizeram dois anos...</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Hão de fazer dois anos...</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Fazem dois anos...</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">A frase já está correta.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O verbo "fazer", quando indica tempo decorrido, é impessoal, ou seja, não tem sujeito e deve permanecer na 3ª pessoa do singular.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                "Os Estados Unidos, apesar da distância, influencia muito na economia brasileira."
+            </div>
+            <p class="statement">Na frase, há um erro de concordância verbal. O verbo "influencia" deveria ser:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">influenciam.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">influenciará.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">influenciou.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">influenciasse.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">A concordância está correta.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O sujeito da oração é "Os Estados Unidos". Mesmo sendo um nome de país no plural, quando acompanhado de artigo ("Os"), o verbo deve ir para o plural para concordar com o artigo.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                "Cheguei em casa tarde da noite."
+            </div>
+            <p class="statement">Embora comum na linguagem coloquial, a regência do verbo "chegar" na frase está em desacordo com a norma-padrão. A forma culta exige a preposição:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">de (Cheguei de casa).</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">para (Cheguei para casa).</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">com (Cheguei com casa).</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">a (Cheguei a casa).</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">por (Cheguei por casa).</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Verbos que indicam movimento, como "ir", "vir" e "chegar", regem a preposição "a" e não "em", segundo a norma-padrão. O correto é "chegar a um lugar".</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                Placa em um evento:
+                "É permitida a permanência apenas de pessoas credenciadas."
+            </div>
+            <p class="statement">A concordância nominal da palavra "permitida" está correta. Se retirássemos o artigo "a", a forma correta, segundo a norma-padrão, seria:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">É permitidas permanência...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">É permitido permanência...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">É permitir permanência...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">É permitidíssimo permanência...</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">A frase permaneceria inalterada.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Sem a presença do artigo "a" para determinar o substantivo "permanência", a expressão "é permitido" funciona como uma locução invariável, devendo permanecer no masculino singular.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

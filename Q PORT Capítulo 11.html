@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 11: Estratégias de Comunicação na Escrita</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 11: Estratégias de Comunicação na Escrita</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Trecho de um e-mail para um diretor de empresa:
+                "Prezado Sr. Diretor, venho por meio deste solicitar uma reunião para discutirmos as metas do próximo semestre. Aguardo vosso retorno e coloco-me à disposição para quaisquer esclarecimentos."
+            </div>
+            <p class="statement">A escolha de palavras como "Prezado", "solicitar" e "à disposição" indica que o autor optou por uma variação linguística:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">Informal e coloquial, adequada para amigos.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">Regional, típica de uma localidade específica do país.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">Formal, adequada à hierarquia e ao contexto profissional.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">Técnica, com jargões de uma área específica.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">Literária, com o uso de figuras de linguagem.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A linguagem utilizada é cerimoniosa e segue as regras da norma-padrão, o que caracteriza o registro formal, apropriado para a comunicação em um ambiente de trabalho hierarquizado.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                Depoimento em um blog pessoal:
+                "Eu nunca imaginei que uma viagem pudesse mudar tanto a minha perspectiva. Quando pisei naquele lugar, senti uma energia diferente. Acredito que todos deveriam passar por uma experiência assim para se reconectarem consigo mesmos."
+            </div>
+            <p class="statement">O uso da 1ª pessoa ("Eu", "minha", "senti") neste texto tem como principal efeito estratégico:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">Garantir a imparcialidade e a objetividade da informação.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">Criar um tom de distanciamento e autoridade científica.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">Estabelecer uma conexão de pessoalidade e proximidade com o leitor, dando um tom de testemunho.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">Atender a uma exigência da norma-padrão para textos digitais.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">Dificultar a compreensão do leitor com informações subjetivas.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Ao usar a 1ª pessoa, o autor compartilha uma experiência pessoal e seus sentimentos, o que cria uma relação mais próxima e íntima com o leitor, tornando o texto mais um depoimento do que um relato impessoal.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                O professor disse aos alunos:
+                "— Vocês precisam entregar o trabalho até amanhã."
+            </div>
+            <p class="statement">Transpondo a fala do professor para o discurso indireto, a forma correta, de acordo com as regras de adaptação verbal e pronominal, é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">O professor disse que eles precisavam entregar o trabalho até amanhã.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">O professor disse que eles precisariam entregar o trabalho até ali.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">O professor disse que vocês precisam entregar o trabalho até o dia seguinte.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">O professor disse que eles precisavam entregar o trabalho até o dia seguinte.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">O professor disse: "eles precisavam entregar o trabalho até o dia seguinte".</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Na transposição para o discurso indireto, o pronome "Vocês" muda para "eles"; o tempo verbal "precisam" (presente) muda para "precisavam" (pretérito imperfeito); e o advérbio "amanhã" muda para "no dia seguinte".</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                Trecho de um artigo de opinião:
+                "Até quando vamos assistir passivamente à destruição de nossas florestas? Não seria a hora de cobrarmos ações mais efetivas de nossos governantes?"
+            </div>
+            <p class="statement">As perguntas feitas no texto são um recurso de estilo conhecido como perguntas retóricas. A principal função delas é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">Obter respostas diretas e concretas dos leitores.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">Testar o conhecimento prévio do público sobre o assunto.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">Conduzir o leitor a uma reflexão e concordância com o ponto de vista do autor.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">Tornar o texto confuso e de difícil interpretação.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">Iniciar uma narração de ficção.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Perguntas retóricas não são feitas para serem respondidas, mas para estimular a reflexão e engajar o leitor, levando-o a concordar com a posição implícita na própria pergunta. É uma estratégia de persuasão.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                Trecho de uma letra de rap:
+                "Aí, mano, tá ligado na fita? A gente corre pelo certo, na luta pra subir. Se a vida é um jogo, eu tô aqui pra zerar, pode crer?"
+            </div>
+            <p class="statement">A linguagem utilizada neste trecho é classificada como coloquial/informal. Essa escolha se justifica por:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">Ser a única forma correta de se expressar em músicas.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">Ser um erro gramatical que desqualifica a mensagem.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">Adequar-se ao gênero musical (rap) e ao público-alvo, criando identidade e verossimilhança.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">Ser uma exigência para a produção de rimas.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">Ser um exemplo de linguagem formal usada em documentos oficiais.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A variação linguística é um recurso. O uso de gírias ("mano", "tá ligado na fita") e expressões informais é uma característica do rap, que busca dialogar diretamente com seu público e representar uma realidade social específica.</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                O gerente comunicou à equipe:
+                "Eu implementarei o novo sistema na próxima semana."
+            </div>
+            <p class="statement">Passando a fala para o discurso indireto, a reescrita correta é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">O gerente comunicou que ele implementaria o novo sistema na semana anterior.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">O gerente comunicou que eu implementaria o novo sistema na semana seguinte.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">O gerente comunicou que ele implementaria o novo sistema na semana seguinte.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">O gerente comunicou que nós implementaríamos o novo sistema na próxima semana.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">O gerente comunicou: "ele implementará o novo sistema na semana seguinte".</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Na conversão, "Eu" vira "ele"; o verbo "implementarei" (futuro do presente) vira "implementaria" (futuro do pretérito); e a locução "na próxima semana" vira "na semana seguinte".</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                Início de uma notícia:
+                "Um estudo publicado na revista 'Nature' revelou que as abelhas são capazes de realizar cálculos matemáticos simples. A pesquisa foi conduzida por cientistas australianos e franceses."
+            </div>
+            <p class="statement">A função da linguagem predominante neste texto é a:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Emotiva, pois expressa os sentimentos do jornalista sobre as abelhas.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Conativa, pois tenta convencer o leitor a proteger as abelhas.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Poética, pois foca na sonoridade das palavras "abelhas" e "cálculos".</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Fática, pois testa o canal de comunicação com o leitor.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Referencial, pois o objetivo principal é informar sobre um fato de maneira objetiva.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'E')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto está centrado no referente (o assunto), transmitindo informações de forma direta e impessoal, o que caracteriza a função referencial ou informativa, típica de notícias e textos científicos.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                Trecho de um diário pessoal:
+                "Ah, que dia difícil! Sinto um aperto no peito, uma tristeza sem nome. Por que as coisas têm que ser tão complicadas? Tomara que amanhã o sol brilhe mais forte, não só no céu, mas dentro de mim."
+            </div>
+            <p class="statement">Pelas características do texto, como o foco nos sentimentos e na subjetividade do eu-lírico, a função da linguagem que predomina é a:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">Referencial.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">Conativa.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">Emotiva.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">Metalinguística.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">Fática.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto é centrado no emissor (o "eu" que escreve), com forte expressão de seus sentimentos, emoções e estado de espírito ("aperto no peito", "tristeza"). Essa é a marca da função emotiva ou expressiva.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                A mãe perguntou ao filho:
+                "— Onde você estava ontem à noite?"
+            </div>
+            <p class="statement">A transposição correta dessa pergunta para o discurso indireto é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">A mãe perguntou ao filho onde ele estivera na noite passada.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">A mãe perguntou ao filho onde você esteve na noite anterior.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">A mãe perguntou ao filho onde ele esteve ontem à noite.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">A mãe perguntou ao filho onde ele estivera na noite anterior.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">A mãe perguntou ao filho que onde ele esteve na noite passada.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Na conversão de uma pergunta, o pronome "você" vira "ele"; o verbo "estava" (pretérito imperfeito) pode se manter ou, mais formalmente, mudar para "estivera" (pretérito mais-que-perfeito); e a locução "ontem à noite" muda para "na noite anterior" ou "na noite passada". A alternativa D é a mais completa e adequada.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                Slogan de uma campanha de doação de sangue:
+                "Você tem o tipo certo para salvar vidas. Doe sangue. Seja o herói de alguém."
+            </div>
+            <p class="statement">A estratégia de comunicação deste texto se baseia fortemente na função da linguagem:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">Poética, pela estrutura rítmica das frases.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">Referencial, por informar dados sobre a doação de sangue.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">Metalinguística, por explicar o que é a doação.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">Conativa (ou Apelativa), por se dirigir diretamente ao leitor e usar verbos no imperativo para influenciá-lo a agir.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">Emotiva, por expressar o sentimento de quem recebe a doação.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto é centrado no receptor ("Você"), usando o vocativo e os verbos no imperativo ("Doe", "Seja") com o claro objetivo de convencer e mobilizar o leitor a praticar uma ação. Essa é a essência da função conativa.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

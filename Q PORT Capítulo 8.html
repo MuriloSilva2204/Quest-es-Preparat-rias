@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8: Interpretando a Ciência (Biologia, Química, Física)</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 8: Interpretando a Ciência (Biologia, Química, Física)</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Artigo de divulgação científica:
+                "A pasteurização, processo criado por Louis Pasteur, consiste no aquecimento de um alimento a uma determinada temperatura por um curto período, seguido de um resfriamento rápido. Esse choque térmico é eficaz para destruir a maior parte dos microrganismos patogênicos e deteriorantes, aumentando a vida útil do produto sem alterar significativamente seu sabor."
+            </div>
+            <p class="statement">De acordo com o texto, o principal objetivo da pasteurização é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">Melhorar o sabor dos alimentos.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">Cozinhar os alimentos de forma mais rápida.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">Reduzir a quantidade de microrganismos para conservar o alimento.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">Resfriar os alimentos para serem consumidos gelados.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">Alterar a composição química dos nutrientes.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto afirma que o processo destrói microrganismos, o que aumenta a vida útil do produto, ou seja, o conserva.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                "O efeito estufa é um fenômeno natural e essencial para a vida na Terra. Gases como o dióxido de carbono (CO2) formam uma camada na atmosfera que retém parte do calor do Sol. Contudo, a queima de combustíveis fósseis tem aumentado drasticamente a concentração desses gases, intensificando a retenção de calor e causando o aquecimento global."
+            </div>
+            <p class="statement">Segundo o texto, o aquecimento global é uma consequência direta:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">Do efeito estufa em seu estado natural.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">Da diminuição da camada de ozônio.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">Da intensificação do efeito estufa pelo excesso de gases emitidos por atividades humanas.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">Da reflexão do calor solar de volta para o espaço.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">Do resfriamento causado pela camada de gases.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto explica que o aumento dos gases do efeito estufa, causado por atividades humanas (queima de combustíveis fósseis), intensifica o fenômeno e causa o aquecimento global.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Trecho de um livro de Física:
+                "Quando um carro freia bruscamente, os passageiros tendem a ser projetados para a frente. Isso ocorre devido à primeira Lei de Newton, também conhecida como Princípio da Inércia, que afirma que um corpo em movimento tende a permanecer em movimento, a menos que uma força atue sobre ele. O carro para, mas o corpo do passageiro tende a continuar em movimento."
+            </div>
+            <p class="statement">Com base na explicação do texto, o movimento dos passageiros para a frente durante a freada é causado:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">Pela força do motor do carro.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">Pela força de atrito dos pneus com o asfalto.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">Pela tendência dos corpos de manterem seu estado de movimento (inércia).</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">Pela força da gravidade que os puxa para baixo.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">Pela redução da pressão do ar dentro do veículo.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto cita diretamente a Primeira Lei de Newton (Inércia) como a causa, explicando que o corpo do passageiro tende a continuar o movimento que tinha antes da freada.</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                "As soluções podem ser classificadas quanto ao seu pH. Soluções com pH menor que 7 são consideradas ácidas, como o suco de limão. Soluções com pH maior que 7 são chamadas de básicas ou alcalinas, como a água sanitária. Um pH igual a 7 indica uma solução neutra, como a água pura."
+            </div>
+            <p class="statement">Um estudante mediu o pH de uma amostra de refrigerante e encontrou o valor 3. De acordo com a classificação apresentada no texto, o refrigerante é uma solução:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">Ácida.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">Básica.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">Alcalina.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">Neutra.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">Saturada.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'A')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Como o valor medido (3) é menor que 7, a solução é classificada como ácida, conforme a definição dada no texto.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                "A osmose é o movimento de água através de uma membrana semipermeável, ocorrendo da região de menor concentração de soluto para a de maior concentração. É por isso que, ao temperarmos uma salada de alface com sal, depois de um tempo as folhas murcham: a água de dentro das células da alface (meio menos concentrado) sai para o meio externo, onde o sal está (meio mais concentrado)."
+            </div>
+            <p class="statement">O texto explica que a alface murcha após ser temperada porque:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">O sal desidrata o ar ao redor das folhas.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">A água se move de dentro das células da alface para fora, em direção ao sal.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">As células da alface absorvem o sal, causando sua morte.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">O sal bloqueia a luz solar, impedindo a fotossíntese.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">A membrana das células se dissolve em contato com o sal.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto descreve o processo de osmose, explicando que a água sai das células da alface (meio menos concentrado) para o meio com sal (mais concentrado), fazendo as folhas murcharem.</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                "Em um átomo, o núcleo é composto por prótons, que têm carga positiva, e nêutrons, que não possuem carga. A eletrosfera, ao redor do núcleo, contém os elétrons, de carga negativa. Um átomo é considerado eletricamente neutro quando o número de prótons é igual ao número de elétrons."
+            </div>
+            <p class="statement">Com base no texto, um átomo que possui 11 prótons e 10 elétrons:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">É eletricamente neutro.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">Possui uma carga elétrica resultante positiva.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">Possui uma carga elétrica resultante negativa.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">Não possui nêutrons em seu núcleo.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">É chamado de molécula.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O átomo tem mais prótons (11 cargas positivas) do que elétrons (10 cargas negativas). Portanto, a carga resultante é positiva (+1).</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                "A condução térmica é um processo de transferência de calor no qual a energia se propaga através de um material, de partícula para partícula, sem que haja transporte de matéria. É por isso que o cabo de uma panela de metal esquenta quando ela está no fogo, mesmo que apenas o fundo da panela esteja em contato direto com a chama."
+            </div>
+            <p class="statement">O aquecimento do cabo da panela, conforme descrito no texto, é um exemplo de transferência de calor por:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Convecção.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Irradiação.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Condução.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Dilatação.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Evaporação.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto define a condução térmica e usa o exemplo do cabo da panela para ilustrar exatamente esse processo de transferência de calor.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                "O som é uma onda mecânica, o que significa que ele precisa de um meio material (sólido, líquido ou gasoso) para se propagar. No vácuo do espaço, onde não há matéria, não há propagação de som. É por isso que, em filmes de ficção científica, as explosões de naves no espaço não deveriam produzir som algum."
+            </div>
+            <p class="statement">De acordo com o texto, o som de uma explosão não pode ser ouvido no vácuo do espaço porque:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">O som viaja muito lentamente no vácuo.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">O vácuo bloqueia as ondas de luz.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">O som, sendo uma onda mecânica, não tem um meio material para se propagar.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">A temperatura do vácuo é muito baixa para a propagação do som.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">A gravidade no espaço é muito fraca para permitir a passagem do som.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto afirma explicitamente que o som precisa de um meio material para se propagar e que o vácuo, por ser ausência de matéria, impede essa propagação.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                "O processo de fotossíntese, realizado por plantas e algas, converte gás carbônico e água em glicose (alimento) e oxigênio, usando a energia da luz solar. Esse processo é fundamental, pois, além de produzir o alimento que sustenta a maior parte das cadeias alimentares, também libera o oxigênio que respiramos."
+            </div>
+            <p class="statement">Com base no texto, dois produtos resultantes do processo de fotossíntese são:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">Gás carbônico e água.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">Água e luz solar.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">Glicose e oxigênio.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">Glicose e gás carbônico.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">Oxigênio e água.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto cita claramente que a fotossíntese produz glicose e oxigênio a partir de gás carbônico, água e luz solar.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                "A ferrugem é o resultado de um processo químico chamado oxidação, que ocorre quando o ferro entra em contato com o oxigênio presente na água e no ar. A formação da ferrugem (óxido de ferro) enfraquece a estrutura do metal. Pintar uma grade de ferro cria uma camada protetora que impede o contato do metal com o ar e a umidade."
+            </div>
+            <p class="statement">Segundo o texto, pintar uma grade de ferro ajuda a evitar a ferrugem porque a tinta:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">Reage quimicamente com o ferro, tornando-o mais forte.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">Absorve o oxigênio do ar, purificando o ambiente.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">Funciona como uma barreira, isolando o ferro do contato com o ar e a água.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">Contém substâncias que revertem o processo de oxidação.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">Transforma o óxido de ferro de volta em ferro metálico.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto explica que a tinta atua como uma camada protetora, uma barreira física que impede que os agentes causadores da oxidação (ar e umidade) alcancem o ferro.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

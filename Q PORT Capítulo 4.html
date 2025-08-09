@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4: A Arquitetura da Frase - Sintaxe Essencial</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 4: A Arquitetura da Frase - Sintaxe Essencial</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                "A preservação das florestas tropicais, um dos maiores desafios ambientais da nossa era, garante o equilíbrio de ecossistemas complexos e a sobrevivência de inúmeras espécies."
+            </div>
+            <p class="statement">Na frase, o sujeito do verbo "garante" é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">nossa era.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">um dos maiores desafios ambientais.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">A preservação das florestas tropicais.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">ecossistemas complexos.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">inúmeras espécies.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Para encontrar o sujeito, pergunta-se ao verbo: "O que garante o equilíbrio...?". A resposta é "A preservação das florestas tropicais". O trecho "um dos maiores desafios ambientais da nossa era" está intercalado entre o sujeito e o verbo para testar a atenção do leitor.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                "O relatório sobre o aquecimento global, que foi divulgado ontem pela ONU, apresenta dados alarmantes."
+            </div>
+            <p class="statement">Na estrutura da frase, o pronome relativo "que" refere-se diretamente ao termo:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">aquecimento global.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">ONU.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">ontem.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">dados alarmantes.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">O relatório sobre o aquecimento global.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'E')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O pronome relativo "que" inicia uma oração subordinada adjetiva e retoma o termo imediatamente anterior a que ela se refere, neste caso, "O relatório sobre o aquecimento global". A função é evitar a repetição: "O relatório... O relatório foi divulgado ontem...".</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                Trecho de uma crônica esportiva:
+                "Após meses de preparação, finalmente entramos em campo. Lutamos com garra, superamos o adversário e conquistamos a vitória tão sonhada."
+            </div>
+            <p class="statement">O sujeito dos verbos "lutamos", "superamos" e "conquistamos" é classificado como:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">Indeterminado, pois não é possível identificá-lo.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">Oculto (ou desinencial), sendo identificado como "Nós".</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">Inexistente, pois os verbos indicam fenômenos da natureza.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">Composto, sendo "garra" e "vitória".</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">Expresso na frase, sendo "nós" a primeira palavra.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O sujeito não está escrito na oração, mas pode ser facilmente identificado pela desinência (terminação) "-mos" dos verbos, que indica a primeira pessoa do plural: "Nós".</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                "Todos os projetos de sustentabilidade que a escola desenvolveu receberam um prêmio internacional."
+            </div>
+            <p class="statement">A oração "que a escola desenvolveu" funciona como uma etiqueta que qualifica um termo anterior. Essa oração tem a função de um:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">Substantivo, completando o sentido da frase.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">Advérbio, indicando o modo como os projetos receberam o prêmio.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">Adjetivo, caracterizando quais projetos receberam o prêmio.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">Artigo, definindo o substantivo "escola".</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">Verbo, indicando a ação principal da frase.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A oração é uma subordinada adjetiva, pois tem o valor de um adjetivo, restringindo e caracterizando o substantivo "projetos". Ela informa que não foram todos os projetos existentes, mas especificamente "aqueles que a escola desenvolveu".</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                "A tecnologia, com suas inovações e desafios constantes, transformou radicalmente as relações de trabalho."
+            </div>
+            <p class="statement">Qual é o núcleo (a palavra mais importante) do sujeito do verbo "transformou"?</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">inovações.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">desafios.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">constantes.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">relações.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">tecnologia.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'E')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Fazendo a pergunta "O que transformou radicalmente as relações de trabalho?", a resposta é "A tecnologia, com suas inovações e desafios constantes". O termo mais importante, do qual todos os outros dependem, é "tecnologia".</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                "O filme a que assisti ontem era um documentário sobre a vida marinha."
+            </div>
+            <p class="statement">Na frase, o pronome relativo "que", precedido pela preposição "a", refere-se ao termo:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">documentário.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">ontem.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">vida marinha.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">filme.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">assisti.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O pronome "que" retoma o substantivo "filme". A preposição "a" é exigida pelo verbo "assistir" no sentido de ver (quem assiste, assiste "a" algo). Portanto, a estrutura completa é "assisti ao filme".</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                "Chegaram ontem, para a surpresa de todos, os resultados dos exames laboratoriais."
+            </div>
+            <p class="statement">Analisando a ordem da frase (verbo + sujeito), o sujeito do verbo "chegaram" é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">ontem.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">a surpresa de todos.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Oculto (Eles).</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">os resultados dos exames laboratoriais.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Indeterminado.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Esta é uma frase na ordem inversa. Para facilitar, pode-se colocá-la na ordem direta: "Os resultados dos exames laboratoriais chegaram ontem...". Perguntando ao verbo "O que chegou ontem?", a resposta é "os resultados dos exames laboratoriais" (sujeito no plural, concordando com o verbo no plural).</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                "O artista, cujas obras encantam o mundo, fará uma nova exposição no próximo mês."
+            </div>
+            <p class="statement">O pronome relativo "cujas" estabelece uma relação de posse e se refere a um termo anterior, conectando-o com o substantivo seguinte ("obras"). O termo ao qual "cujas" se refere é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">mundo.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">exposição.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">mês.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">obras.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">artista.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'E')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O pronome "cujo" (e suas variações) indica posse. Ele conecta o termo possuído ("obras") ao possuidor ("artista"), que é o termo anterior ao qual ele se refere. A frase poderia ser reescrita como: "As obras do artista encantam o mundo".</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                "Existem, em nossa sociedade, muitos problemas sociais que precisam de solução urgente."
+            </div>
+            <p class="statement">O sujeito do verbo "Existem" é:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">Inexistente, pois "existir" é impessoal.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">nossa sociedade.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">muitos problemas sociais.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">solução urgente.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">Oculto (Eles).</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>Diferente do verbo "haver" no sentido de existir, o verbo "existir" é pessoal e sempre tem sujeito, com o qual deve concordar. Na ordem direta: "Muitos problemas sociais existem em nossa sociedade". O sujeito é "muitos problemas sociais".</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                "A cidade onde nasci fica no interior e mantém suas tradições."
+            </div>
+            <p class="statement">O pronome relativo "onde" tem a função de retomar um termo anterior que indica lugar. Nesse caso, "onde" refere-se a:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">interior.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">tradições.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">nasci.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">cidade.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">mantém.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O pronome "onde" é usado para se referir a um lugar físico mencionado anteriormente. Na frase, o lugar retomado é "A cidade". A frase equivale a: "Nasci na cidade".</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

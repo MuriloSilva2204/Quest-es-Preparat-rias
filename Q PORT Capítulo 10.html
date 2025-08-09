@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10: Interpretando a Sociedade (Geografia e História)</title>
+    
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+
+        /* Título do Capítulo */
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        /* Card da Questão */
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            padding: 25px 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Texto de Apoio */
+        .support-text {
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            color: #495057;
+        }
+
+        /* Enunciado da Questão */
+        .statement {
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Lista de Alternativas */
+        .alternatives {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternatives li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .alternatives li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .alternatives label {
+            margin-left: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: calc(100% - 30px);
+        }
+        
+        .alternatives input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        /* Botão de Verificação */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Div de Feedback */
+        .feedback {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: white;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .feedback span {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        /* Classes de Correção */
+        .correto {
+            background-color: #28a745; /* Verde */
+        }
+
+        .incorreto {
+            background-color: #dc3545; /* Vermelho */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Capítulo 10: Interpretando a Sociedade (Geografia e História)</h2>
+
+        <!-- Questão 1 -->
+        <div class="question-card" id="q1">
+            <div class="support-text">
+                Trecho de um diário de um bandeirante do século XVII: "Avançamos por semanas mata adentro, seguindo o curso do rio, em busca do ouro e das 'peças da terra'. O calor era implacável e muitos dos nossos homens sucumbiram às febres e aos ataques dos nativos, que defendiam seu território com bravura."
+            </div>
+            <p class="statement">Pela leitura do texto, pode-se inferir que a expressão "peças da terra" se refere:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q1_alternatives" id="q1a" value="A"><label for="q1a">Aos artefatos de cerâmica produzidos pelos indígenas.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1b" value="B"><label for="q1b">Aos animais exóticos da fauna local.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1c" value="C"><label for="q1c">Aos próprios indígenas, que eram capturados para serem escravizados.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1d" value="D"><label for="q1d">Às plantas medicinais raras encontradas na floresta.</label></li>
+                <li><input type="radio" name="q1_alternatives" id="q1e" value="E"><label for="q1e">Aos mapas secretos que indicavam a localização de minas.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>No contexto histórico das bandeiras de apresamento, a expressão "peças da terra" era um eufemismo utilizado para se referir aos indígenas que eram capturados e escravizados.</p>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card" id="q2">
+            <div class="support-text">
+                "A Mesopotâmia, cujo nome significa 'terra entre rios', desenvolveu-se em uma fértil planície localizada entre os rios Tigre e Eufrates. A dependência desses rios era total, pois suas cheias periódicas depositavam um lodo rico em nutrientes (húmus) que fertilizava o solo, viabilizando a agricultura em uma região cercada por desertos."
+            </div>
+            <p class="statement">De acordo com o texto, a principal razão para o desenvolvimento da agricultura na Mesopotâmia foi:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q2_alternatives" id="q2a" value="A"><label for="q2a">A presença de desertos, que forçava a inovação.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2b" value="B"><label for="q2b">O clima quente e seco da região.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2c" value="C"><label for="q2c">A fertilização natural do solo causada pelas cheias dos rios.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2d" value="D"><label for="q2d">A construção de grandes cidades muradas.</label></li>
+                <li><input type="radio" name="q2_alternatives" id="q2e" value="E"><label for="q2e">O comércio com povos vizinhos.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q2', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto estabelece uma relação direta entre os rios e a agricultura, explicando que as cheias depositavam lodo fértil, o que "viabilizava a agricultura". A questão testa a compreensão dessa relação homem-ambiente.</p>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card" id="q3">
+            <div class="support-text">
+                "O êxodo rural no Brasil intensificou-se a partir da metade do século XX, motivado pela mecanização da agricultura, que reduziu a necessidade de mão de obra, e pela busca por melhores oportunidades de emprego e acesso a serviços como saúde e educação nas cidades, que passavam por um processo de industrialização."
+            </div>
+            <p class="statement">O texto aponta como uma das principais causas para o êxodo rural no Brasil:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q3_alternatives" id="q3a" value="A"><label for="q3a">O aumento da violência no campo.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3b" value="B"><label for="q3b">A atração exercida pelas oportunidades de trabalho na indústria urbana.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3c" value="C"><label for="q3c">O fim da escravidão no final do século XIX.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3d" value="D"><label for="q3d">O desejo de viver em contato com a natureza.</label></li>
+                <li><input type="radio" name="q3_alternatives" id="q3e" value="E"><label for="q3e">As políticas governamentais de incentivo à vida na cidade.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q3', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A resposta é uma interpretação direta das causas apresentadas no texto, que menciona explicitamente a "busca por melhores oportunidades de emprego [...] nas cidades, que passavam por um processo de industrialização".</p>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card" id="q4">
+            <div class="support-text">
+                Descrição de um mapa do Mar Mediterrâneo na Antiguidade: O mapa mostra a Península Itálica no centro, cercada por água em quase todos os lados, exceto ao norte, onde se conecta ao continente europeu.
+            </div>
+            <p class="statement">Com base na descrição geográfica, a Itália está localizada em uma:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q4_alternatives" id="q4a" value="A"><label for="q4a">Ilha, pois é cercada de água por todos os lados.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4b" value="B"><label for="q4b">Planície, caracterizada por um relevo plano.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4c" value="C"><label for="q4c">Cordilheira, formada por uma cadeia de montanhas.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4d" value="D"><label for="q4d">Península, uma porção de terra cercada de água por quase todos os lados.</label></li>
+                <li><input type="radio" name="q4_alternatives" id="q4e" value="E"><label for="q4e">Istmo, uma faixa estreita de terra que liga duas áreas maiores.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q4', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A questão testa a compreensão de um conceito geográfico a partir de sua descrição. A definição de península corresponde exatamente à descrição da localização da Itália no mapa.</p>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card" id="q5">
+            <div class="support-text">
+                Trecho de um artigo sobre a Guerra Fria: "Durante a Guerra Fria, o mundo se viu polarizado entre duas superpotências com ideologias antagônicas: os Estados Unidos, liderando o bloco capitalista, e a União Soviética, à frente do bloco socialista. Essa disputa não resultou em um confronto militar direto entre as duas, mas se manifestou em conflitos regionais, na corrida armamentista e na corrida espacial."
+            </div>
+            <p class="statement">O texto descreve a Guerra Fria como um período de:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q5_alternatives" id="q5a" value="A"><label for="q5a">Conflito militar direto e declarado entre EUA e URSS.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5b" value="B"><label for="q5b">Aliança política e econômica entre o capitalismo e o socialismo.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5c" value="C"><label for="q5c">Disputa indireta e ideológica entre duas superpotências opostas.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5d" value="D"><label for="q5d">Paz mundial e desarmamento nuclear.</label></li>
+                <li><input type="radio" name="q5_alternatives" id="q5e" value="E"><label for="q5e">Isolamento total dos EUA e da URSS do resto do mundo.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q5', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A resposta sintetiza a ideia central do texto, que caracteriza a Guerra Fria como uma disputa "polarizada", "ideológica" e que não chegou ao "confronto militar direto".</p>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card" id="q6">
+            <div class="support-text">
+                "A Caatinga é um bioma exclusivamente brasileiro, caracterizado por um clima semiárido, com chuvas escassas e irregulares. A vegetação é adaptada a essas condições, apresentando plantas com folhas grossas ou modificadas em espinhos para reduzir a perda de água, além de caules que armazenam o líquido, como os cactos."
+            </div>
+            <p class="statement">A presença de plantas com espinhos e caules que armazenam água na Caatinga é uma:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q6_alternatives" id="q6a" value="A"><label for="q6a">Consequência da pobreza do solo.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6b" value="B"><label for="q6b">Estratégia de defesa contra animais de grande porte.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6c" value="C"><label for="q6c">Anomalia genética causada pela falta de nutrientes.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6d" value="D"><label for="q6d">Adaptação da vegetação às condições de seca do clima.</label></li>
+                <li><input type="radio" name="q6_alternatives" id="q6e" value="E"><label for="q6e">Característica de plantas que crescem em ambientes muito frios.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q6', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto estabelece uma relação clara entre o ambiente (clima semiárido) e as características dos seres vivos (adaptação das plantas). As folhas em forma de espinhos e o armazenamento de água são adaptações para sobreviver à falta de chuva.</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card" id="q7">
+            <div class="support-text">
+                Descrição de uma imagem de Atenas na Grécia Antiga: A imagem mostra a Ágora, a praça pública principal. Nela, cidadãos atenienses (homens livres, nascidos na cidade) caminham, conversam e se reúnem em pequenos grupos para debater política e filosofia.
+            </div>
+            <p class="statement">Pela cena descrita, pode-se inferir que a Ágora ateniense era um espaço fundamentalmente destinado à:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q7_alternatives" id="q7a" value="A"><label for="q7a">Prática de esportes e competições atléticas.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7b" value="B"><label for="q7b">Moradia da elite e dos governantes da cidade.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7c" value="C"><label for="q7c">Realização de cerimônias religiosas fechadas ao público.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7d" value="D"><label for="q7d">Convivência social e ao exercício da cidadania e do debate público.</label></li>
+                <li><input type="radio" name="q7_alternatives" id="q7e" value="E"><label for="q7e">Atividade agrícola e ao armazenamento de colheitas.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q7', 'D')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>A descrição da Ágora como um local de encontro para debater política e filosofia permite inferir sua função social como centro da vida pública e da democracia ateniense.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card" id="q8">
+            <div class="support-text">
+                "A Revolução Industrial, iniciada na Inglaterra no século XVIII, transformou radicalmente a produção de mercadorias. A manufatura, baseada no trabalho artesanal, foi substituída pela maquinofatura, com o uso de máquinas a vapor e a concentração de trabalhadores em fábricas, dando origem a uma nova classe social: o proletariado."
+            </div>
+            <p class="statement">Uma das principais transformações sociais causadas pela Revolução Industrial, segundo o texto, foi:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q8_alternatives" id="q8a" value="A"><label for="q8a">O fortalecimento do trabalho artesanal e familiar.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8b" value="B"><label for="q8b">O surgimento da classe trabalhadora urbana, o proletariado.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8c" value="C"><label for="q8c">A diminuição da produção de mercadorias.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8d" value="D"><label for="q8d">O retorno da população das cidades para o campo.</label></li>
+                <li><input type="radio" name="q8_alternatives" id="q8e" value="E"><label for="q8e">A substituição das máquinas pelo trabalho manual.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q8', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto aponta explicitamente que a concentração de trabalhadores em fábricas deu "origem a uma nova classe social: o proletariado", sendo esta uma consequência direta do processo descrito.</p>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card" id="q9">
+            <div class="support-text">
+                "O descarte inadequado de lixo eletrônico é um grave problema ambiental. Baterias e componentes de celulares e computadores contêm metais pesados como chumbo e mercúrio. Se jogados em lixões comuns, esses metais podem infiltrar-se no solo e contaminar os lençóis freáticos, que são fontes de água subterrânea."
+            </div>
+            <p class="statement">De acordo com o texto, a contaminação dos lençóis freáticos por lixo eletrônico é causada pela:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q9_alternatives" id="q9a" value="A"><label for="q9a">Decomposição rápida dos plásticos presentes nos aparelhos.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9b" value="B"><label for="q9b">Infiltração de metais pesados tóxicos no solo.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9c" value="C"><label for="q9c">Emissão de gases de efeito estufa durante a reciclagem.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9d" value="D"><label for="q9d">Utilização excessiva de água na fabricação desses produtos.</label></li>
+                <li><input type="radio" name="q9_alternatives" id="q9e" value="E"><label for="q9e">Falta de espaço nos aterros sanitários.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q9', 'B')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto descreve o processo: o lixo eletrônico contém metais pesados que, se descartados incorretamente, "podem infiltrar-se no solo e contaminar os lençóis freáticos". A questão avalia a compreensão dessa cadeia de causa e efeito.</p>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card" id="q10">
+            <div class="support-text">
+                Trecho de um documento sobre a cidadania no Império Romano: "Inicialmente, a cidadania romana era um privilégio restrito aos habitantes da cidade de Roma. Com o tempo e a expansão do Império, ela foi sendo estendida a outros povos da Península Itálica e, mais tarde, a todos os homens livres do Império, como forma de garantir a lealdade e facilitar a administração dos vastos territórios."
+            </div>
+            <p class="statement">O texto mostra que, ao longo do tempo, o conceito de cidadania em Roma:</p>
+            <ol type="A" class="alternatives">
+                <li><input type="radio" name="q10_alternatives" id="q10a" value="A"><label for="q10a">Permaneceu inalterado e restrito à elite.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10b" value="B"><label for="q10b">Foi revogado e deixou de existir.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10c" value="C"><label for="q10c">Passou por um processo de expansão e inclusão.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10d" value="D"><label for="q10d">Tornou-se um direito exclusivo dos militares.</label></li>
+                <li><input type="radio" name="q10_alternatives" id="q10e" value="E"><label for="q10e">Foi concedido também aos escravos.</label></li>
+            </ol>
+            <button onclick="verificarResposta('q10', 'C')">Verificar Resposta</button>
+            <div class="feedback" style="display: none;">
+                <span></span>
+                <p>O texto descreve uma evolução, de um privilégio "restrito" para uma condição estendida "a todos os homens livres do Império", caracterizando um claro processo de expansão.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Função para verificar a resposta selecionada pelo usuário.
+         * @param {string} idQuestao - O ID da div da questão (ex: 'q1').
+         * @param {string} respostaCorreta - A letra da alternativa correta (ex: 'C').
+         */
+        function verificarResposta(idQuestao, respostaCorreta) {
+            // Seleciona os elementos relevantes dentro do card da questão específica.
+            const questaoDiv = document.getElementById(idQuestao);
+            const respostaUsuario = questaoDiv.querySelector('input[type="radio"]:checked');
+            const feedbackDiv = questaoDiv.querySelector('.feedback');
+            const feedbackSpan = feedbackDiv.querySelector('span');
+
+            // 1. Verifica se alguma alternativa foi selecionada.
+            if (!respostaUsuario) {
+                alert('Por favor, selecione uma alternativa antes de verificar.');
+                return;
+            }
+
+            // 2. Limpa classes de feedback anteriores para permitir nova verificação.
+            feedbackDiv.classList.remove('correto', 'incorreto');
+            
+            // 3. Compara a resposta do usuário com o gabarito.
+            if (respostaUsuario.value === respostaCorreta) {
+                // Se estiver correta:
+                feedbackSpan.textContent = 'Correto!';
+                feedbackDiv.classList.add('correto');
+            } else {
+                // Se estiver incorreta:
+                feedbackSpan.textContent = 'Incorreto.';
+                feedbackDiv.classList.add('incorreto');
+            }
+
+            // 4. Exibe a div de feedback.
+            feedbackDiv.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
